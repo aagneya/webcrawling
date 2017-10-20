@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Expandable Search Box</title>
+
+
+
+
+      <link href={% static "css/style.css" %} rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+<div id="search-10" class="widget_search">
+
+<form action="/result/" method = POST class="form-wrapper cf">{% csrf_token %}
+
+		{{ form.search }}
+		<button type="submit">Search</button>
+
+
+</form>
+
+
+
+
+
+
+</body>
+</html>

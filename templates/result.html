@@ -1,0 +1,69 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Expandable Search Box</title>
+
+
+
+
+      <link href={% static "css/style.css" %} rel="stylesheet">
+
+
+</head>
+
+<body>
+
+
+
+
+
+            {% include 'navbar.html' %}
+{% if value %}
+            <div>
+               <h2> NEWSSSSSSSSSSSSS Top 3</h2>
+            {% for x,y in value.items %}
+
+              <div class="post">
+                        <p> <b>NEWS: </b>{{ x }}</p>
+                    </div>
+                    <div class="post">
+                              <p> <b>LINKS: </b><a href="{{ y }}">{{ y }}</a></p>
+                          </div>
+            {%endfor%}
+
+
+            </div>
+            {% else %}
+            <p> No result found or try with full word </p>
+            {% endif %}
+
+{% if posts %}
+
+         <h2> DEFINITION </h2>
+          {% for post in posts %}
+             <div class="post">
+                 <div class="date">
+                <p>{{ post}}</p>
+                 </div>
+
+             </div>
+      {% endfor %}
+
+{% else %}
+      <p>No result found or try with full word</p>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

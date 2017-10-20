@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Expandable Search Box</title>
+
+
+
+
+      <link href={% static "css/style.css" %} rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+
+
+  {% for post in search %}
+
+        <p style="color:white;"><b>{{ post}}</b></p>
+
+
+
+  {% endfor %}
+
+
+
+
+
+
+</body>
+</html>
